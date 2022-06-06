@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  authorization:
+    image: php:8.1-alpine
+    build:
+      target: dev
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - $PWD:/opt/authorization
+    networks:
+      - nginx_default
+      - internal
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14-alpine
+    env_file:
+      - .env
+    ports:
+      - 5432
+    networks:
+      - nginx_default
+      - internal
+
+networks:
+  internal:
+    internal: true
+  nginx_default:
+    external: true

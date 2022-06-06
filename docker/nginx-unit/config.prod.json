@@ -1,0 +1,24 @@
+{
+    "listeners": {
+        "*:8080": {
+            "pass": "applications/authorization"
+        }
+    },
+    "applications": {
+        "bot": {
+            "type": "php",
+            "working_directory": "/opt/authorization",
+            "root": "/opt/authorization/app/public",
+            "script": "index.php",
+            "limits": {
+                "timeout": 20,
+                "requests": 1000
+            },
+            "processes": {
+                "max": 15,
+                "spare": 5,
+                "idle_timeout": 10
+            }
+        }
+    }
+}

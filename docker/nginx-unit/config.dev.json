@@ -1,0 +1,17 @@
+{
+  "listeners": {
+    "*:8080": {
+      "pass": "applications/authorization"
+    }
+  },
+  "applications": {
+    "authorization": {
+      "type": "php",
+      "working_directory": "/opt/authorization",
+      "user": "host",
+      "group": "host",
+      "root": "/opt/authorization/app/public",
+      "script": "index.php"
+    }
+  }
+}

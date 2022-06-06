@@ -1,0 +1,14 @@
+{
+    "name": "progrstyle/authorization",
+    "description": "Introductory project for user authorization",
+    "type": "project",
+    "license": "open",
+    "authors": [
+        {
+            "name": "b.zhargalov",
+            "email": "bair3112@yandex.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
